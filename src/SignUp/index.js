@@ -21,13 +21,15 @@ function SignUpPage() {
                     initialValues={{ firstName: '', lastName: '', password: '', email: '', gender: '' }}
                     validationSchema={Yup.object({
                         firstName: Yup.string()
-                            .max(15, 'Must be 15 characters or less').required('*'),
+                            .required('*'),
                         lastName: Yup.string()
-                            .max(20, 'Must be 20 characters or less').required('*'),
+                            .required('*'),
                         password: Yup.string()
-                            .max(15, 'Must be 15 characters or less').required('*Enter password'),
-                        email: Yup.string().required('*Enter email or mobile number'),
-                        gender: Yup.string().required(<i class="fa-solid fa-triangle-exclamation"></i>),
+                            .required('*Enter password'),
+                        email: Yup.string()
+                            .required('*Enter email or mobile number'),
+                        gender: Yup.string()
+                            .required(<i class="fa-solid fa-triangle-exclamation"></i>),
                     })}
                     onSubmit={(values, { setSubmitting }) => {
                         setTimeout(() => {
